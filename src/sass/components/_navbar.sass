@@ -1,0 +1,73 @@
+.header__menu-wrapper
+
+    &__menu
+
+        &__item
+
+            &__submenu
+                position: absolute
+                top: 100%
+                display: none
+                background: #ffffff
+                width: 100%
+                left: 50%
+                transform: translateX(-50%)
+                padding: 3rem 1rem
+                flex-direction: column
+
+                &.mobile-active
+                    display: flex
+
+                &__all-products
+                    color: #B4B4B6
+                    text-align: center
+                    margin-top: 4rem
+                    font-family: Gotham-Book
+                    font-size: 0.875rem
+
+                    &:hover
+                        text-decoration: none
+
+                .body-wrapper
+                    justify-content: center
+                    align-items: center
+
+                    @include mediaQuery($tablet-medium-query)
+                        flex-direction: column
+
+                
+
+                li
+                    max-width: 200px
+                    width: 100%
+                    padding: 1.3rem 0
+
+                    &:hover
+                        background: #F5F5F5
+
+                    a
+                        display: flex 
+                        flex-direction: column
+                        align-items: center
+                        justify-content: center
+                        color: #1E1E1F
+                        font-size: 0.9375rem
+                        font-family: Gotham-Bold
+
+                        
+
+
+                        img
+                            width: 120px
+                            height: 120px
+
+                        & > span 
+                            margin-top: 1rem
+
+                            span
+                                color: #B4B4B6
+                                font-family: Gotham-Book
+
+            &:hover &__submenu, &:focus &__submenu
+                display: flex
+

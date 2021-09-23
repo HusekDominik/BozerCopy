@@ -1,0 +1,35 @@
+{
+	"name": "fixedwebpack",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "webpack-dev-server --config webpack.dev.js --open",
+		"build": "webpack --config webpack.production.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"css-loader": "^4.2.2",
+		"file-loader": "^6.0.0",
+		"html-loader": "^1.3.0",
+		"html-webpack-plugin": "^4.3.0",
+		"jquery": "^3.5.1",
+		"mini-css-extract-plugin": "^0.11.0",
+		"node-sass": "^4.14.1",
+		"sass-loader": "^10.0.1",
+		"slick-carousel": "^1.8.1",
+		"style-loader": "^1.2.1",
+		"ts-loader": "^8.0.3",
+		"typescript": "^4.0.2",
+		"webpack": "^4.44.1",
+		"webpack-cli": "^3.3.12"
+	},
+	"dependencies": {
+		"@fortawesome/fontawesome-free": "^5.14.0",
+		"@types/jquery": "^3.5.1",
+		"clean-webpack-plugin": "^3.0.0",
+		"webpack-merge": "^5.1.2"
+	}
+}

@@ -1,0 +1,303 @@
+.header
+    background-color: $primary-bg-color
+    width: 100%
+    display: flex
+    flex-direction: row
+    align-items: center
+    height: 80px
+    position: fixed
+    top: 0
+    font-size: 0.875rem
+    z-index: 999
+
+    @include mediaQuery($tablet-query)
+        position: relative
+
+    &__logo
+        outline: none
+       
+        svg
+            width: 180px
+            height: auto
+            padding: 0 0 0 4rem
+
+            @include mediaQuery($mobile-query)
+                width: 150px
+                padding: 0 0 0 1rem
+
+    &__menu-wrapper
+        display: flex
+        height: 100%
+        margin-left: 3rem
+        align-items: center
+
+        @include mediaQuery($tablet-query)
+            position: absolute
+            width: 100%
+            background: $primary-bg-color
+            left: 0
+            top: 100%
+            margin-left: 0rem
+            justify-content: center
+            padding: 0 1rem
+
+        &__mobile-menu
+            display: none
+            width: 100%
+            color: #ffffff
+            height: 100%
+
+            @include mediaQuery($tablet-query)
+                border-top: 1px solid #ffffff
+
+
+
+            h3
+                text-transform: uppercase
+                font-family: Gotham-Bold
+                color: #ffffff
+
+
+            &__hamburger
+                margin: 0 0 0 auto
+                display: flex
+                justify-content: center
+                align-items: center
+                width: 30px
+                height: 30px
+                cursor: pointer
+
+                & > div
+                    width: 70%
+                    height: 3px
+                    background: #ffffff
+                    position: relative
+
+                    &::before
+                        content: ''
+                        position: absolute
+                        top: -7px
+                        background: #ffffff
+                        width: 100%
+                        height: 100%
+                        transition: all 200ms ease-in-out
+                    
+                    &::after
+                        content: ''
+                        position: absolute
+                        bottom: -7px
+                        background: #ffffff
+                        width: 100%
+                        height: 100%
+                        transition: all 200ms ease-in-out
+                    
+                    &.active
+                        background-color: transparent
+
+                        &::before
+                            top: 0px
+                            transform: rotate(135deg)
+                            background: $secondary-bg-color
+                            
+                    
+                        &::after
+                           
+                            bottom: 0px
+                            transform: rotate(45deg)
+                            background: $secondary-bg-color
+                           
+                        
+
+        
+            @include mediaQuery($tablet-medium-query)
+                display: flex
+                align-items: center
+    
+        &__menu
+            display: flex
+            height: 100%
+            width: 100%
+            justify-content: center
+            transition: all 200ms ease-in-out
+            
+            @include mediaQuery($tablet-query)
+                border-top: 1px solid #ffffff
+
+            @include mediaQuery($tablet-medium-query)
+                padding-left: 0rem
+                flex-direction: column
+                position: absolute
+                top: 100%
+                pointer-events: none
+                opacity: 0
+                padding: 0 1rem
+                border: none
+                width: 100%
+                min-height: 200px
+                top: 100%
+                background: $primary-bg-color
+
+            &.active
+                display: flex
+                opacity: 1
+                pointer-events: auto
+            
+            
+
+            &__item
+                height: 100%
+
+                &:hover &__link::after, &:focus &__link::after
+                    background-image: url("../images/navbar-arrow-up.png")
+
+                &__link
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    width: 100%
+                    height: 100%
+                    text-transform: uppercase
+                    color: #ffffff
+                    text-decoration: none
+                    padding: 0 2rem 0 1rem
+                    position: relative
+                    font-size: 0.875rem
+
+                    @include mediaQuery($tablet-medium-query)
+                        padding: 0 1rem 0 1rem  
+                    
+                    span
+                        width: 100%
+                        text-align: center
+                        
+                    i
+                        display: none
+                        @include mediaQuery($tablet-medium-query)
+                            display: block
+
+                    &::after
+                        content: ""
+                        position: absolute
+                        background-image: url("../images/navbar-arrow-down.png")
+                        right: 12px
+                        top: 50%
+                        transform: translateY(-50%)
+                        width: 10px
+                        height: 10px
+                        background-size: 10px 10px
+                        background-size: cover
+                        background-position: center
+                        z-index: 998
+                        filter: invert(42%) sepia(0%) saturate(35%) hue-rotate(146deg) brightness(99%) contrast(90%)
+
+                        @include mediaQuery($tablet-medium-query)
+                            display: none
+
+                    
+                    &:hover
+                        background-color: #2f2f2f
+
+                    &--contact
+                        font-family: Gotham-Book
+                        padding: 0 1rem
+                        
+                        &::after
+                            display: none
+                
+            
+        
+    &__right-container
+        display: flex
+        flex-direction: row 
+        align-items: center
+        margin: 0 0 0 auto
+        height: 100%
+
+        &__logo-bose
+            width: 120px
+            height: auto
+            margin-right: 2rem
+
+            @include mediaQuery($tablet-medium-query)
+                display: none
+
+        &__product-search
+            width: 0px
+            pointer-events: none
+            opacity: 0
+            transition: all 200ms ease-in-out
+            position: absolute
+            top: 100%
+            right: 0
+
+            &.active
+                width: 200px
+                opacity: 1
+                pointer-events: auto
+
+
+        &__search
+            height: 100%
+            width: 70px
+            padding: 0.4rem
+            display: flex
+            flex-direction: row
+            align-items: center
+            justify-content: center
+            cursor: pointer
+
+            &__search-span
+                display: flex
+                justify-content: center
+                align-items: center
+            
+            &__x-span
+                display: none
+
+            &.active
+                background: #e73834
+            
+            &:hover
+                background-color: $hover-bg-color
+
+            svg
+                width: 32%
+                height: 32%
+
+        &__cart-wrapper
+            width: 84px
+            height: 100%
+            display: flex
+            flex-direction: row 
+            justify-content: center
+            align-items: center
+            cursor: pointer
+            background-color: $hover-bg-color
+            
+            &__icon-wrapper
+                position: relative
+
+
+                span
+                    position: absolute
+                    top: -10px
+                    right: -10px
+                    background: #289a10
+                    color: #ffffff
+                    height: 23px
+                    width: 23px
+                    font-size: 0.75rem
+                    border-radius: 100%
+                    display: flex
+                    align-items: center
+                    font-weight: bold
+                    justify-content: center
+
+                    
+                
+                img
+                    width: 25px
+                    height: 25px
+                    filter: invert(99%) sepia(0%) saturate(2%) hue-rotate(42deg) brightness(112%) contrast(101%)
+                
+
